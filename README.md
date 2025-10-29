@@ -290,10 +290,3 @@ Contribuições são bem-vindas! Recomenda-se:
 Inclua a licença desejada (MIT, Apache-2.0, etc.) no arquivo `LICENSE` do repositório.
 
 ---
-
-Se quiser, eu:
-- adiciono um arquivo `.env.example` pronto,
-- gero um README.md (versão mais curta focada no GitHub),
-- ou adapto este help.md para inglês.
-
-Diga qual próximo arquivo você quer que eu gere ou ajuste. 
