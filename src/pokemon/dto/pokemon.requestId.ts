@@ -1,7 +1,7 @@
 import { IsNotEmpty, IsString } from 'class-validator';
 
-export class PokemonSearchNameDto {
+export class PokemonRequestId {
   @IsString()
   @IsNotEmpty()
-  name: string;
+  id: string;
 }
