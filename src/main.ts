@@ -14,8 +14,18 @@ async function bootstrap() {
   );
 
   const configSwagger = new DocumentBuilder()
-    .setTitle('Pokémon API')
-    .setDescription('API para gerenciamento de Pokémon')
+    .setTitle('PokéVerse API')
+    .setDescription(
+      `
+       A **PokéVerse API** é uma plataforma completa e escalável desenvolvida com **NestJS + TypeORM + PostgreSQL**, 
+    projetada para o **gerenciamento avançado de Pokémons** e suas interações.
+
+    🔹 Crie, liste, edite e exclua Pokémons com validação robusta.  
+    🔹 Estrutura modular e preparada para expansão (treinadores, batalhas, regiões, etc.).  
+    🔹 Integração com banco de dados relacional e documentação automatizada via Swagger.  
+
+    Ideal para projetos de estudo, simulações ou sistemas complexos inspirados no universo Pokémon.`,
+    )
     .setVersion('1.0')
     .build();
 
