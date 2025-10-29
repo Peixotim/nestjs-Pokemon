@@ -17,8 +17,8 @@ async function bootstrap() {
     .setTitle('PokéVerse API')
     .setDescription(
       `
-       A **PokéVerse API** é uma plataforma completa e escalável desenvolvida com **NestJS + TypeORM + PostgreSQL**, 
-    projetada para o **gerenciamento avançado de Pokémons** e suas interações.
+    A PokéVerse API é uma plataforma completa e escalável desenvolvida com NestJS + TypeORM + PostgreSQL, 
+    projetada para o gerenciamento avançado de Pokémons e suas interações.
 
     🔹 Crie, liste, edite e exclua Pokémons com validação robusta.  
     🔹 Estrutura modular e preparada para expansão (treinadores, batalhas, regiões, etc.).  
