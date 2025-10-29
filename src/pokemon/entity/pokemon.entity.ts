@@ -1,4 +1,10 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import {
+  Column,
+  CreateDateColumn,
+  Entity,
+  PrimaryGeneratedColumn,
+  UpdateDateColumn,
+} from 'typeorm';
 import { Region, PokemonType, Generation, Nature } from '../enums/pokemo.enums';
 
 @Entity('pokemons')
@@ -48,7 +54,10 @@ export class PokemonEntity {
 
   @Column({ type: 'int' })
   ev: number;
-
+  @CreateDateColumn()
+  createdAt: Date;
+  @UpdateDateColumn()
+  updateAt: Date;
   constructor(
     name: string,
     nationaldex: number,
@@ -69,6 +78,8 @@ export class PokemonEntity {
       Speed: number;
     },
     ev: number,
+    createdAt: Date,
+    updateAt: Date,
   ) {
     this.nationaldex = nationaldex;
     this.name = name;
@@ -82,5 +93,7 @@ export class PokemonEntity {
     this.abilities = abilities;
     this.stats = stats;
     this.ev = ev;
+    this.createdAt = createdAt;
+    this.updateAt = updateAt;
   }
 }
