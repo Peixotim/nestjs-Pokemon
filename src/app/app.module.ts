@@ -1,24 +1,26 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
+import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { PokemonModule } from 'src/pokemon/pokemon.module';
 
 @Module({
   imports: [
-    TypeOrmModule.forRoot({
-      host: 'localhost',
-      port: 5434,
-      database: 'pokemon-db',
-      password: 'ad',
-      username: 'ad',
-      type: 'postgres',
-      autoLoadEntities: true,
-      synchronize: true,
+    ConfigModule.forRoot({ isGlobal: true }), // carrega .env automaticamente
+    TypeOrmModule.forRootAsync({
+      imports: [ConfigModule],
+      inject: [ConfigService],
+      useFactory: (config: ConfigService) => ({
+        type: 'postgres',
+        host: config.get<string>('DB_HOST'),
+        port: Number(config.get<string>('DB_PORT')) || 5432,
+        username: config.get<string>('DB_USERNAME'),
+        password: config.get<string>('DB_PASSWORD'),
+        database: config.get<string>('DB_NAME'),
+        autoLoadEntities: true,
+        synchronize: true, // somente dev
+      }),
     }),
     PokemonModule,
   ],
-  controllers: [AppController],
-  providers: [AppService],
 })
 export class AppModule {}
