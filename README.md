@@ -118,7 +118,7 @@ http://localhost:3000
 
 Assim que a aplicação estiver rodando, a documentação Swagger estará disponível em:
 ```
-http://localhost:3000/api
+http://localhost:3000/api-docs
 ```
 Use essa interface para inspecionar DTOs, testar endpoints e ver os esquemas de resposta.
 
